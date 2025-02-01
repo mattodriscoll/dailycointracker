@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon"> 
+    <title>Daily Coin Tracker</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        #chatbot-output {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            padding: 20px;
+            color: black; /* Set text color to black */
+        }
+
+        .banner {
+            width: 600px;
+            height: 200px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">DailyCoinTracker</div>
+            <ul class="nav-links">
+                <li><a href="#stories">Stories</a></li>
+                <li><a href="#creator">Creator</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#subscribe">Subscribe</a></li>
+                <li><a href="#write">Write</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <img src="images/banner.jpg" class="banner">
+        <h1>Global Market Update: Bitcoin Hovers above $100k</h1>
+        <div id="chatbot-output"></div>
+    </main>
+
+    <script>
+        const scriptText = `While a number of crypto leaders are still betting on BTC to fall before rallying towards $250K later this year, the Derive.xyz market certainly is not convinced.
+
+In fact, there's a 9.7% chance of it falling below $75K before March, and an even less likely 4.4% probability that it will swing over $250K before September 26," said Nick Forster, founder at the leading decentralized onchain options AI-powered platform Derive.xyz, told CoinDesk.
+
+Flows on Deribit and the CME remain bullish, with momentum seemingly building for state-level BTC reserves in the U.S. That said, traditional safe haven gold and tokens pegged to it are higher, and the latest uptick in Tokyo inflation bolsters the case for the anti-risk yen.
+
+Gold rose to an all-time high of $2,799 per ounce early Friday, taking the month-to-date gain to 6.5%. The lifetime high comes as participants in the London bullion market scramble to borrow the yellow metal from central banks, buoyed by reports of increased gold deliveries to the U.S. The flurry of activity is reportedly driven by concerns over possible import tariffs, according to Reuters.
+
+The founder of Blokland Smart Multi-Asset Fund, Jeroen Blokland, has thus explained that the rally of gold to record highs against major fiat currencies is indicative of currency debasement—the deliberate devaluation of paper money that could similarly source demand for alternative investments like cryptocurrencies.
+
+Gold-backed tokens are already drawing strength from the XAU price rise, although they continue to trade at a discount to the yellow metal. 
+
+Tether gold (XAUT) rose to its lifetime high of $2,796 on Bitfinex early today, TradingView data show. Meanwhile, PAXG also teased a move to record highs above $2,800.
+
+Tokyo inflation surges, AUD/JPY looks south.
+Consumer inflation in Tokyo, which usually precedes nationwide trends, accelerated slightly in January, according to government data. The core figure, excluding the volatile food and energy component, was up 2.5% in January from a year earlier, compared with a 2.4% rise in December.
+
+It also makes way for more BOJ rate hikes, and therefore a stronger yen: The fastest annual increase, to be sure. Last week, the central bank raised the policy rate to 0.5%, the highest in over 16 years.
+
+A potential yen surge will certainly not bode well for riskier assets, as witnessed in August last year. AUD/JPY, the risk barometer of the FX market, has just dived out of a consolidation pattern, which points to further losses and broad-based risk-off ahead.`;
+
+        let index = 0;
+
+        function typeText() {
+            if (index < scriptText.length) {
+                const currentChar = scriptText.charAt(index);
+                document.getElementById("chatbot-output").innerHTML += currentChar;
+                index++;
+
+                let typingSpeed = 5; // Set faster base speed (10x faster)
+
+                // Slow down a little at punctuation to keep it natural
+                if (".,!?".includes(currentChar)) {
+                    typingSpeed = 30; 
+                }
+
+                setTimeout(typeText, typingSpeed);
+            }
+        }
+
+        // Start the typing effect when the page loads
+        typeText();
+    </script>
+    
+    <footer>
+        <p>&copy; 2025 DailyCoinTracker. All rights reserved.</p>
+    </footer>
+</body>
+</html>

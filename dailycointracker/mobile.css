@@ -1,0 +1,81 @@
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+       flex-direction: row; /* Keep links in a horizontal row */
+        gap: 5px; /* Reduce gap for smaller screens */
+        margin-top: 10px;
+        padding: 5px 5px;
+        flex-wrap: wrap; /* Allow links to wrap to the next line if needed */
+        justify-content: center; /* Center the links */
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .ticker-container {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        background: #60a5fa; /* Light blue background for ticker */
+        color: white;
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .ticker {
+        display: inline-block;
+        padding-left: 100%; /* Start off-screen */
+        animation: ticker-scroll 20s linear infinite;
+    }
+
+    .ticker-item {
+        font-size: 1rem;
+        margin-right: 20px;
+    }
+
+    .featured-article, .news-item {
+        padding: 15px;
+    }
+
+    .featured-article h2, .news-item h3 {
+        font-size: 1.5rem;
+    }
+
+    .read-more {
+        font-size: 1rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+
+    .hero, .latest-news, .bulletin-story {
+        margin-bottom: 20px;
+    }
+
+    .news-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .bulletin-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .bulletin-logos img {
+        width: 80px; /* Adjust logo size for mobile */
+        height: auto;
+    }
+}
