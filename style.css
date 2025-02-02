@@ -202,14 +202,14 @@ main {
 
 .medium-article {
     background-color: #f4f4f9;
-    padding: 20px;
+    padding: 10px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     flex: 1 1 40%; /* Allows two articles to fit side by side, considering a little space for margin/padding */
     box-sizing: border-box; /* Includes padding and border in the element's total width and height */
     width: auto;
-    height: 250px; /* Adjust height as needed, or set a fixed height for uniformity */
+    height: 220px; /* Adjust height as needed, or set a fixed height for uniformity */
 }
 
 .medium-article img {
