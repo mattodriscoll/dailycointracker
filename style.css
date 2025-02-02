@@ -163,8 +163,8 @@ main {
     justify-content: space-between;
     margin-bottom: 10px;
     margin-top: 10px;
-    margin-right: 60px;
-    margin-left: 60px;
+    margin-right: 80px;
+    margin-left: 80px;
     padding: 10px;
 }
 
@@ -192,7 +192,6 @@ main {
 }
 
 .medium-articles {
-    display: flex;
     flex: 0 0 55%; /* This container takes the remaining 50% */
     flex-wrap: wrap;
     justify-content: space-between;
