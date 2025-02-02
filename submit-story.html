@@ -16,9 +16,28 @@
             font-weight: bold;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
-            color: #333333;
+            background-color: #1a1a1a; /* Dark background */
+            color: #ffffff; /* Light text */
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Combined Vertical Banners */
+        .vertical-banner {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 150px; /* Adjust width as needed */
+            background: linear-gradient(135deg, #1a1a1a, #2575fc, #6a11cb);
+            z-index: 1;
+        }
+
+        .vertical-banner.left {
+            left: 0;
+        }
+
+        .vertical-banner.right {
+            right: 0;
         }
 
         header {
@@ -124,10 +143,12 @@
             white-space: nowrap;
             background: linear-gradient(135deg, #1a1a1a, #2575fc, #6a11cb);
             color: white;
-            padding: 15px 0;
+            padding: 15px 150px; /* Adjusted padding to account for banners */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-top: 2px solid #60a5fa;
             border-bottom: 2px solid #60a5fa;
+            position: relative;
+            z-index: 2; /* Ensure ticker is above banners */
         }
 
         .ticker {
@@ -170,6 +191,8 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             color: white;
             animation: fadeIn 1s ease-in-out;
+            position: relative;
+            z-index: 2;
         }
 
         @keyframes fadeIn {
@@ -200,9 +223,10 @@
         }
 
         .submission-form input[type="text"],
+        .submission-form input[type="email"],
         .submission-form textarea,
         .submission-form input[type="url"] {
-            width: 100%;
+            width: calc(100% - 24px); /* Adjusted for padding */
             padding: 12px;
             margin-bottom: 20px;
             border-radius: 6px;
@@ -215,6 +239,7 @@
         }
 
         .submission-form input[type="text"]:focus,
+        .submission-form input[type="email"]:focus,
         .submission-form textarea:focus,
         .submission-form input[type="url"]:focus {
             border-color: #3b82f6;
@@ -270,15 +295,21 @@
 
         /* Footer Styles */
         footer {
-            background-color: #333333;
-            color: #ffffff;
+            background-color: #1a1a1a; /* Dark background */
+            color: #ffffff; /* Light text */
             text-align: center;
             padding: 20px 0;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
         }
     </style>
 </head>
 <body>
+
+    <!-- Vertical Banners -->
+    <div class="vertical-banner left"></div>
+    <div class="vertical-banner right"></div>
 
     <header>
         <nav class="navbar">
@@ -308,6 +339,9 @@
             <form id="projectSubmissionForm" action="https://formspree.io/f/mrbeklwe" method="POST">
                 <label for="projectName">Project Name:</label>
                 <input type="text" id="projectName" name="projectName" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
 
                 <label for="projectDescription">Project Description:</label>
                 <textarea id="projectDescription" name="projectDescription" required></textarea>
