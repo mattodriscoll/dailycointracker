@@ -225,7 +225,7 @@ main {
     align-self: flex-end;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.8rem;
-    width: 100%; /* Ensure h4 takes full width of the container */
+    margin: 15px 0;
 }
 
 .read-more {
