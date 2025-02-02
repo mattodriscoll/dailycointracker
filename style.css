@@ -201,6 +201,7 @@ main {
 }
 
 .medium-article {
+    display: flex;
     background-color: #f4f4f9;
     padding: 20px;
     border-radius: 12px;
