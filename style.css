@@ -192,7 +192,7 @@ main {
 }
 
 .medium-articles {
-    flex: 0 0 55%; /* This container takes the remaining 50% */
+    flex: 0 0 50%; /* This container takes the remaining 50% */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
