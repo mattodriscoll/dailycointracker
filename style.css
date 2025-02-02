@@ -159,6 +159,7 @@ main {
 
 .top {
     display: flex;
+    flex-direction: row-reverse; /* Move featured article to the right */
     justify-content: space-between;
     margin-bottom: 10px;
     margin-top: 10px;
