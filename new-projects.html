@@ -179,6 +179,7 @@
 
         .projects-container {
             display: flex;
+            justify-content: center; /* Center the sliding articles */
             overflow: hidden;
             position: relative;
             margin: 20px 0;
@@ -186,8 +187,17 @@
 
         .projects-slide {
             display: flex;
-            transition: transform 0.5s ease-in-out;
             gap: 20px; /* Added gap between sliding articles */
+            animation: slide 20s linear infinite; /* Infinite sliding animation */
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
         .project-article {
@@ -233,32 +243,12 @@
             line-height: 1.4;
         }
 
-        .carousel-nav {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .carousel-nav button {
-            background: #007BFF;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 0 5px;
-            font-size: 1em;
-            transition: background 0.3s ease;
-        }
-
-        .carousel-nav button:hover {
-            background: #0056b3;
-        }
-
         .static-projects {
             display: flex;
             flex-wrap: wrap;
             gap: 20px; /* Added gap between static articles */
             margin-top: 40px;
+            justify-content: center; /* Center the static articles */
         }
 
         .static-projects .project-article {
@@ -304,10 +294,6 @@
             <div class="projects-slide" id="projects-slide">
                 <!-- Project articles will be dynamically inserted here -->
             </div>
-        </div>
-        <div class="carousel-nav">
-            <button onclick="prevSlide()">Previous</button>
-            <button onclick="nextSlide()">Next</button>
         </div>
         <div class="static-projects">
             <!-- Static project articles will be dynamically inserted here -->
@@ -355,13 +341,13 @@
 
         const projectsSlide = document.getElementById('projects-slide');
         const staticProjects = document.querySelector('.static-projects');
-        let currentIndex = 0;
 
         // Function to render sliding projects
         function renderProjects() {
             projectsSlide.innerHTML = '';
-            for (let i = 0; i < 3; i++) {
-                const project = projects[(currentIndex + i) % projects.length];
+            // Duplicate the projects to create an infinite loop effect
+            const duplicatedProjects = [...projects, ...projects];
+            duplicatedProjects.forEach((project, index) => {
                 const article = document.createElement('div');
                 article.className = 'project-article';
                 article.innerHTML = `
@@ -370,7 +356,7 @@
                     <p>${project.description}</p>
                 `;
                 projectsSlide.appendChild(article);
-            }
+            });
         }
 
         // Function to render static projects
@@ -387,18 +373,6 @@
                 `;
                 staticProjects.appendChild(article);
             }
-        }
-
-        // Function to show next set of projects
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % projects.length;
-            renderProjects();
-        }
-
-        // Function to show previous set of projects
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + projects.length) % projects.length;
-            renderProjects();
         }
 
         // Initial render
