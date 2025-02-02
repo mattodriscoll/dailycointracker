@@ -34,7 +34,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 20px;
-            max-width: 1600px;
+            max-width: 1800px; /* Increased max-width */
             margin: 0 auto;
         }
 
@@ -163,7 +163,7 @@
         /* New Projects Landing Page Styles */
         .projects-landing {
             padding: 20px;
-            max-width: 1200px;
+            max-width: 1800px; /* Increased max-width */
             margin: 0 auto;
             background: linear-gradient(135deg, #1a1a1a, #2575fc, #6a11cb);
             border-radius: 15px;
@@ -187,42 +187,27 @@
         .projects-slide {
             display: flex;
             transition: transform 0.5s ease-in-out;
+            gap: 20px; /* Added gap between sliding articles */
         }
 
         .project-article {
-            flex: 0 0 25%;
+            flex: 0 0 calc(33.33% - 20px); /* Adjusted for 3 articles with gap */
             box-sizing: border-box;
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 10px;
-            margin-right: 20px;
             background: #f4f4f9;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
             height: 400px; /* Increased height */
-        }
-
-        .project-article::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(96, 165, 250, 0.3), rgba(37, 117, 252, 0.3));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .project-article:hover::before {
-            opacity: 1;
+            border: 2px solid transparent;
         }
 
         .project-article:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: #60a5fa;
+            box-shadow: 0 0 15px rgba(96, 165, 250, 0.7);
         }
 
         .project-article img {
@@ -245,6 +230,7 @@
         .project-article p {
             font-size: 0.9em;
             color: #555;
+            line-height: 1.4;
         }
 
         .carousel-nav {
@@ -271,12 +257,12 @@
         .static-projects {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 20px; /* Added gap between static articles */
             margin-top: 40px;
         }
 
         .static-projects .project-article {
-            flex: 0 0 calc(25% - 20px);
+            flex: 0 0 calc(33.33% - 20px); /* Adjusted for 3 articles with gap */
             height: 300px; /* Standard height for static articles */
         }
 
@@ -297,6 +283,7 @@
                 <div class="logo-text">Daily Coin Tracker</div>
             </div>
             <ul class="nav-links">
+                <li><a href="index.html">Home</a></li> <!-- Added Home link -->
                 <li><a href="submit-story.html">Submit a Story</a></li>
                 <li><a href="https://x.com/DailyCoinTrackr">Community</a></li>
                 <li><a href="https://www.dailycointracker.com">Subscribe</a></li>
@@ -336,43 +323,33 @@
         const projects = [
             {
                 image: "images/project1.jpg",
-                title: "Project Alpha: Decentralized Finance Platform",
-                description: "A new DeFi platform aiming to revolutionize lending and borrowing in the crypto space."
+                title: "Project Alpha",
+                description: "A new DeFi platform revolutionizing crypto lending."
             },
             {
                 image: "images/project2.jpg",
-                title: "Project Beta: NFT Marketplace",
-                description: "An innovative NFT marketplace with zero gas fees and instant transactions."
+                title: "Project Beta",
+                description: "An NFT marketplace with zero gas fees."
             },
             {
                 image: "images/project3.jpg",
-                title: "Project Gamma: Blockchain Gaming",
-                description: "A blockchain-based gaming platform offering play-to-earn opportunities."
+                title: "Project Gamma",
+                description: "Blockchain gaming with play-to-earn rewards."
             },
             {
                 image: "images/project4.jpg",
-                title: "Project Delta: Crypto Wallet",
-                description: "A secure and user-friendly crypto wallet supporting multiple blockchains."
+                title: "Project Delta",
+                description: "A secure multi-chain crypto wallet."
             },
             {
                 image: "images/project5.jpg",
-                title: "Project Epsilon: DAO Governance",
-                description: "A decentralized autonomous organization focused on community-driven governance."
+                title: "Project Epsilon",
+                description: "Community-driven DAO governance."
             },
             {
                 image: "images/project6.jpg",
-                title: "Project Zeta: Smart Contract Platform",
-                description: "A next-gen smart contract platform with enhanced scalability and security."
-            },
-            {
-                image: "images/project7.jpg",
-                title: "Project Eta: Decentralized Exchange",
-                description: "A DEX offering seamless trading with low fees and high liquidity."
-            },
-            {
-                image: "images/project8.jpg",
-                title: "Project Theta: Privacy Coin",
-                description: "A privacy-focused cryptocurrency ensuring anonymous transactions."
+                title: "Project Zeta",
+                description: "Scalable and secure smart contracts."
             }
         ];
 
@@ -383,7 +360,7 @@
         // Function to render sliding projects
         function renderProjects() {
             projectsSlide.innerHTML = '';
-            for (let i = 0; i < 4; i++) {
+            for (let i = 0; i < 3; i++) {
                 const project = projects[(currentIndex + i) % projects.length];
                 const article = document.createElement('div');
                 article.className = 'project-article';
@@ -399,7 +376,7 @@
         // Function to render static projects
         function renderStaticProjects() {
             staticProjects.innerHTML = '';
-            for (let i = 4; i < 8; i++) {
+            for (let i = 3; i < 6; i++) {
                 const project = projects[i];
                 const article = document.createElement('div');
                 article.className = 'project-article';
