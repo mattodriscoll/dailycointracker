@@ -331,7 +331,7 @@ main {
 
 .news-article img {
     width: 100%; /* Ensures the image fills the container */
-    height: 350px; /* Maintains aspect ratio */
+    height: auto; /* Maintains aspect ratio */
     border-radius: 16px; /* Rounds the corners of the image */
 }
 
