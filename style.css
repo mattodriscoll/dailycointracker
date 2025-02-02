@@ -213,12 +213,15 @@ main {
 }
 
 .medium-article img {
+    display: flex;
     width: 100%;
     height: auto;
     border-radius: 8px;
 }
 
 .medium-article h4 {
+    display: flex;
+    align-self: flex-end;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.8rem;
 }
