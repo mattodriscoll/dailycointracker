@@ -1,81 +1,175 @@
 /* Responsive Styles for Mobile Devices */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 20px;
+    body {
+        font-size: 16px; /* Slightly larger font size for better readability */
     }
 
-    .nav-links {
-       flex-direction: row; /* Keep links in a horizontal row */
-        gap: 5px; /* Reduce gap for smaller screens */
-        margin-top: 10px;
-        padding: 5px 5px;
-        flex-wrap: wrap; /* Allow links to wrap to the next line if needed */
-        justify-content: center; /* Center the links */
+    /* Header and Navigation */
+    header {
+        padding: 10px 0; /* Add some padding */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stack logo and nav links vertically */
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 60px; /* Slightly smaller logo */
+        height: 60px;
     }
 
     .logo-text {
-        font-size: 1.5rem;
-        text-align: center;
+        font-size: 1.5rem; /* Smaller logo text */
+        text-align: center; /* Center-align logo text */
+        margin-top: 10px; /* Add some margin */
     }
 
+    .nav-links {
+        flex-direction: row; 
+        gap: 5px;
+        font-size: 0.5rem; /* Slightly larger font size for nav links */
+        margin-top: 10px;
+        text-align: center; /* Center-align nav links */
+    }
+
+    .nav-links li a {
+        padding: 8px 12px; /* Add more padding for better touch targets */
+    }
+
+    /* Ticker */
     .ticker-container {
-        width: 100%;
-        overflow: hidden;
-        white-space: nowrap;
-        background: #60a5fa; /* Light blue background for ticker */
-        color: white;
-        padding: 10px 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .ticker {
-        display: inline-block;
-        padding-left: 100%; /* Start off-screen */
-        animation: ticker-scroll 20s linear infinite;
+        padding: 17px 0; /* Reduce padding */
     }
 
     .ticker-item {
-        font-size: 1rem;
-        margin-right: 20px;
+        font-size: 1.5rem; /* Smaller font size for ticker */
+        margin-right: 15px; /* Reduce space between items */
     }
 
-    .featured-article, .news-item {
-        padding: 15px;
+    /* Main Content */
+    main {
+        padding: 10px; /* Add some padding */
     }
 
-    .featured-article h2, .news-item h3 {
-        font-size: 1.5rem;
+    .top {
+        flex-direction: column; /* Stack featured article and medium articles vertically */
+        margin: 10px 0; /* Adjust margins */
     }
 
-    .read-more {
-        font-size: 1rem;
+    .featured-article {
+        flex: 1 1 100%; /* Full width for featured article */
+        margin-bottom: 20px; /* Add space below */
+        padding: 15px; /* Add padding */
     }
 
-    footer p {
-        font-size: 0.9rem;
+    .featured-article img {
+        height: auto; /* Ensure images are responsive */
     }
 
-    .hero, .latest-news, .bulletin-story {
-        margin-bottom: 20px;
+    .featured-article h2 {
+        font-size: 1.5rem; /* Adjust font size for featured article title */
+        margin: 10px 0; /* Add some margin */
+    }
+
+    .medium-articles {
+        flex: 1 1 100%; /* Full width for medium articles */
+        gap: 15px; /* Add gap between medium articles */
+    }
+
+    .medium-article {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px;
+        align-items: flex-start;
+        padding: 5px; 
+    }
+
+    .medium-article img {
+        height: auto; /* Ensure images are responsive */
+    }
+
+    .medium-article-h4 {
+        font-size: 0.5rem; /* Adjust font size for medium article titles */
+        margin: 10px 0; /* Add some margin */
+    }
+
+    .latest-news {
+        margin: 10px 0; /* Adjust margins */
     }
 
     .news-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: column; /* Stack news articles vertically */
+        gap: 20px; /* Add gap between news articles */
     }
 
-    .bulletin-logos {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
+    .news-article {
+        flex-basis: 100%; /* Full width for each news article */
+        margin-bottom: 20px; /* Add space between articles */
+        padding: 15px; /* Add padding */
     }
 
-    .bulletin-logos img {
-        width: 80px; /* Adjust logo size for mobile */
-        height: auto;
+    .news-article img {
+        height: 200px; /* Adjust image height */
+        width: 100%; /* Ensure images are responsive */
+        object-fit: cover; /* Ensure images maintain aspect ratio */
+    }
+
+    .news-article h4 {
+        font-size: 1.2rem; /* Adjust font size for news article titles */
+        margin: 10px 0; /* Add some margin */
+    }
+
+    /* Footer */
+    footer {
+        padding: 15px 0; /* Add some padding */
+        font-size: 0.9rem; /* Slightly smaller font size */
+    }
+
+    /* News Banner */
+    .news-banner {
+        padding: 10px 0; /* Reduce padding */
+    }
+
+    .news-ticker {
+        padding-left: 20%; /* Adjust ticker padding */
+    }
+
+    .news-item {
+        font-size: 0.6rem; /* Smaller font size for news items */
+        margin-right: 15px; /* Reduce space between items */
+    }
+}
+
+/* Adjustments for very small screens */
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.2rem; /* Even smaller logo text */
+    }
+
+    .nav-links {
+        font-size: 0.9rem; /* Smaller font size for nav links */
+    }
+
+    .ticker-item {
+        font-size: 0.8rem; /* Smaller font size for ticker */
+    }
+
+    .featured-article h2 {
+        font-size: 1.4rem; /* Adjust font size for featured article title */
+    }
+
+    .medium-article h4 {
+        font-size: 1.1rem; /* Adjust font size for medium article titles */
+    }
+
+    .news-article h4 {
+        font-size: 1.1rem; /* Adjust font size for news article titles */
+    }
+
+    .news-item {
+        font-size: 0.8rem; /* Smaller font size for news items */
     }
 }
