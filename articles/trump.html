@@ -30,24 +30,6 @@
             z-index: 1;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        
-        /* Combined Vertical Banners */
-        .vertical-banner {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            width: 150px; /* Adjust width as needed */
-            background: linear-gradient(135deg, #1a1a1a, #2575fc, #6a11cb);
-            z-index: 1;
-        }
-
-        .vertical-banner.left {
-            left: 0;
-        }
-
-        .vertical-banner.right {
-            right: 0;
-        }
 
         header {
             background: linear-gradient(135deg, #000000, #1a1a1a, #6a11cb, #2575fc);
@@ -344,15 +326,12 @@
         h1 {
             display: flex;
             align-self: center;
+            padding: 5px;
         }
         
     </style>
 </head>
 <body>
-
-    <!-- Vertical Banners -->
-    <div class="vertical-banner left"></div>
-    <div class="vertical-banner right"></div>
 
     <header>
         <nav class="navbar">
