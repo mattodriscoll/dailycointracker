@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/favicon.ico" type="../image/favicon.ico">
+    <title>Daily Coin Tracker</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        #chatbot-output {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            padding: 20px;
+            color: black; /* Set text color to black */
+        }
+
+        .banner {
+            width: 600px;
+            height: 200px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">DailyCoinTracker</div>
+            <ul class="nav-links">
+                <li><a href="../submit-story.html">Submit a Story</a></li>
+                <li><a href="https://x.com/DailyCoinTrackr">Community</a></li>
+                <li><a href="https://www.dailycointracker.com">Subscribe</a></li>
+                <li><a href="https://www.dailycointracker.com">Stories</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <img src="../images/banner.jpg" class="banner">
+        <h1>Global Market Update: Bitcoin Hovers above $100k</h1>
+        <div id="chatbot-output"></div>
+    </main>
+
+    <script>
+        const scriptText = `'Key Points:\n' +
+        '- Crypto is hotter than a fresh batch of jalapeño poppers at a backyard BBQ\n' +
+        "- Donald Trump's support for crypto has countries changing their tune faster than a teenage boy's voice during puberty\n" +
+        '- Get ready to hop on the crypto train and ride that sweet, sweet wave to financial freedom\n' +
+        '\n' +
+        `Well folks, it looks like the winds of change are blowing in the world of cryptocurrency faster than my neighbor's leaf blower on a Sunday morning. With Donald Trump giving crypto the ol' thumbs up, countries around the globe are starting to see the light and soften their stance on digital assets. It's like a light switch has been flipped and suddenly everyone is shouting "Hallelujah, praise be to Satoshi Nakamoto!"\n` +
+        '\n' +
+        `Crypto is hotter than a fresh batch of jalapeño poppers at a backyard BBQ. People are jumping on the bandwagon faster than you can say "blockchain." It's like a digital gold rush out there, with everyone hoping to strike it rich and live out their wildest dreams of buying a pet unicorn and a mansion on Mars.\n` +
+        '\n' +
+        "Thanks to Donald Trump's crypto-friendly policy, countries that used to turn up their noses at digital assets are now scrambling to get in on the action. It's like a game of musical chairs, but instead of chairs, it's cryptocurrency exchanges and everyone is desperately trying to find a seat before the music stops. So grab your popcorn, folks, because this show is just getting started.\n" +
+        '\n' +
+        'So what does this all mean for you, the average Joe or Jane looking to dip your toes into the world of crypto? Well, get ready to hop on the crypto train and ride that sweet, sweet wave to financial freedom. With more and more countries warming up to digital assets, the possibilities are endless. You could be the next crypto millionaire, living the high life and sipping margaritas on a private beach somewhere.\n' +
+        '\n' +
+"But remember, with great power comes great responsibility. Crypto may be the future, but it's also a wild and unpredictable beast. So strap in, hold on tight, and get ready for the ride of your life. Who knows, you could be the next big thing in the world of cryptocurrency. Just remember to thank Donald Trump for paving the way, because without him, we might still be stuck in the dark ages of traditional finance.';
+
+        let index = 0;
+
+        function typeText() {
+            if (index < scriptText.length) {
+                const currentChar = scriptText.charAt(index);
+                document.getElementById("chatbot-output").innerHTML += currentChar;
+                index++;
+
+                let typingSpeed = 5; // Set faster base speed (10x faster)
+
+                // Slow down a little at punctuation to keep it natural
+                if (".,!?".includes(currentChar)) {
+                    typingSpeed = 30; 
+                }
+
+                setTimeout(typeText, typingSpeed);
+            }
+        }
+
+        // Start the typing effect when the page loads
+        typeText();
+    </script>
+    
+    <footer>
+        <p>&copy; 2025 DailyCoinTracker. All rights reserved.</p>
+    </footer>
+</body>
+</html>
