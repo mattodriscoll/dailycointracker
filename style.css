@@ -28,6 +28,11 @@ header {
      margin: 0 auto;
 }
 
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
 .logo {
     display: flex;
     align-items: center;
