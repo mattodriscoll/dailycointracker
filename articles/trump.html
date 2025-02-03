@@ -8,6 +8,223 @@
     <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Daily Coin Tracker - Submit a Story</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Electrolize', sans-serif;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; /* Dark background */
+            color: #ffffff; /* Light text */
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Combined Vertical Banners */
+        .vertical-banner {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 150px; /* Adjust width as needed */
+            background: linear-gradient(135deg, #1a1a1a, #2575fc, #6a11cb);
+            z-index: 1;
+        }
+
+        .vertical-banner.left {
+            left: 0;
+        }
+
+        .vertical-banner.right {
+            right: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #000000, #1a1a1a, #6a11cb, #2575fc);
+            color: white;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .logo img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #60a5fa;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(96, 165, 250, 0.7);
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover .logo-text {
+            color: #60a5fa;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            font-size: 24px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background-color: #60a5fa;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: #60a5fa;
+        }
+
+        .nav-links li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* Ticker Styles */
+        .ticker-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            background: linear-gradient(135deg, #1a1a1a, #2575fc, #6a11cb);
+            color: white;
+            padding: 15px 150px; /* Adjusted padding to account for banners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-top: 2px solid #60a5fa;
+            border-bottom: 2px solid #60a5fa;
+            position: relative;
+            z-index: 2; /* Ensure ticker is above banners */
+        }
+
+        .ticker {
+            display: inline-block;
+            padding-left: 10%;
+            animation: ticker-scroll 50s linear infinite;
+        }
+
+        .ticker-item {
+            display: inline-block;
+            margin-right: 80px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .price-up {
+            color: #4caf50;
+        }
+
+        .price-down {
+            color: #f44336;
+        }
+
+        @keyframes ticker-scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Submission Form Styles */
+        .submission-form {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: linear-gradient(135deg, #1a1a1a, #2575fc, #6a11cb);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            color: white;
+            animation: fadeIn 1s ease-in-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .submission-form h2 {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #60a5fa;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        
         #chatbot-output {
             font-family: 'Inter', sans-serif;
             font-size: 18px;
@@ -25,20 +242,34 @@
     </style>
 </head>
 <body>
+
+    <!-- Vertical Banners -->
+    <div class="vertical-banner left"></div>
+    <div class="vertical-banner right"></div>
+
     <header>
         <nav class="navbar">
-            <div class="logo">DailyCoinTracker</div>
+            <div class="logo">
+                <img src="images/cointrackerlogo.jpg" alt="Daily Coin Tracker Logo"> 
+                <div class="logo-text">Daily Coin Tracker</div>
+            </div>
             <ul class="nav-links">
-                <li><a href="../submit-story.html">Submit a Story</a></li>
-                <li><a href="https://x.com/DailyCoinTrackr">Community</a></li>
-                <li><a href="https://www.dailycointracker.com">Subscribe</a></li>
-                <li><a href="https://www.dailycointracker.com">Stories</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#subscribe">Subscribe</a></li>
+                <li><a href="new-projects.html">New Projects</a></li>
             </ul>
         </nav>
     </header>
+
+    <div class="ticker-container">
+        <div class="ticker" id="ticker">
+            Loading...
+        </div>
+    </div>
     
     <main>
-        <img src="../images/banner.jpg" class="banner">
+        <img src="../images/trump2.jpg" class="banner">
         <h1>Global Market Update: Bitcoin Hovers above $100k</h1>
         <div id="chatbot-output"></div>
     </main>
