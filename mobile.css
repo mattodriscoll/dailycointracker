@@ -141,7 +141,12 @@
         font-size: 0.6rem; /* Smaller font size for news items */
         margin-right: 15px; /* Reduce space between items */
     }
+
+    .vertical-banner {
+        display: none;
+    }
 }
+
 
 /* Adjustments for very small screens */
 @media (max-width: 480px) {
