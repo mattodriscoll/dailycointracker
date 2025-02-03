@@ -145,6 +145,16 @@
     .vertical-banner {
         display: none;
     }
+
+     .subscribe-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 40px;
+            background: #1e1e2f;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
 }
 
 
