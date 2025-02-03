@@ -96,8 +96,8 @@
             <ul class="nav-links">
                 <li><a href="submit-story.html">Submit a Story</a></li>
                 <li><a href="https://x.com/DailyCoinTrackr">Community</a></li>
-                <li><a href="subscribe.html">Subscribe</a></li>
                 <li><a href="new-projects.html">New Projects</a></li>
+                <li><a href="index.html">Home</a></li>
             </ul>
         </nav>
     </header>
@@ -105,7 +105,7 @@
     <div class="subscribe-container">
         <h1>Subscribe to Our Newsletter</h1>
         <p>Stay updated with the latest news, trends, and insights in the cryptocurrency world. Enter your details below to join our monthly newsletter.</p>
-        <form class="subscribe-form" id="subscribeForm">
+        <form class="subscribe-form" id="subscribeForm" action="https://formspree.io/f/xpwqrnaq" method="POST">
             <input type="text" id="name" name="name" placeholder="Your Name" required>
             <input type="email" id="email" name="email" placeholder="Your Email Address" required>
             <button type="submit">Subscribe</button>
@@ -129,10 +129,26 @@
             const errorMessage = document.getElementById('errorMessage');
 
             if (name && email) {
-                // Simulate successful submission
-                successMessage.style.display = 'block';
-                errorMessage.style.display = 'none';
-                document.getElementById('subscribeForm').reset();
+                // Submit the form data to Formspree
+                fetch(this.action, {
+                    method: this.method,
+                    body: new FormData(this),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        successMessage.style.display = 'block';
+                        errorMessage.style.display = 'none';
+                        document.getElementById('subscribeForm').reset();
+                    } else {
+                        errorMessage.style.display = 'block';
+                        successMessage.style.display = 'none';
+                    }
+                }).catch(error => {
+                    errorMessage.style.display = 'block';
+                    successMessage.style.display = 'none';
+                });
             } else {
                 errorMessage.style.display = 'block';
                 successMessage.style.display = 'none';
