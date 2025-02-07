@@ -1,11 +1,11 @@
-/* Default Styles for Desktop View */
+Desktop View */
 body {
     font-family: 'Electrolize', sans-serif;
     font-weight: bold;
     margin: 0;
     padding: 0;
-    background-color: #1e1e2f; /* Dark background */
-    color: #ffffff; /* White text */
+    background-color: #ffffff;
+    color: #333333;
     overflow-x: hidden;
 }
 
@@ -20,18 +20,17 @@ header {
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    max-width: 1600px;
-    margin: 0 auto;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0 20px;
+     max-width: 1600px;
+     margin: 0 auto;
 }
 
 h2 {
     display: flex;
     justify-content: center;
-    color: #ffffff; /* White text */
 }
 
 .logo {
@@ -60,6 +59,7 @@ h2 {
     font-family: 'Electrolize', sans-serif;
     font-weight: bold;
     font-size: 2.2rem;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #ffffff;
@@ -160,8 +160,8 @@ h2 {
 /* TOP SECTION STYLING */
 main {
     padding: 5px;
-    background-color: #1e1e2f; /* Dark background */
-    color: #ffffff; /* White text */
+    background-color: #ffffff;
+    color: #333333;
 }
 
 .top {
@@ -176,7 +176,7 @@ main {
 
 .featured-article {
     flex: 0 0 50%;
-    background-color: #2a2a3f; /* Darker background for articles */
+    background-color: #f4f4f9;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -195,7 +195,6 @@ main {
     font-size: 1.5rem;
     font-weight: bold;
     margin: 15px 0;
-    color: #ffffff; /* White text */
 }
 
 .medium-articles {
@@ -209,7 +208,7 @@ main {
 
 .medium-article {
     display: flex;
-    background-color: #2a2a3f; /* Darker background for articles */
+    background-color: #f4f4f9;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -233,7 +232,6 @@ main {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.8rem;
     margin: 15px 0;
-    color: #ffffff; /* White text */
 }
 
 .read-more {
@@ -243,14 +241,13 @@ main {
     font-weight: bold;
     margin-top: 10px;
     padding: 8px 8px;
-    background-color: #6a11cb; /* Purple button */
+    background-color: #886fac; 
     text-decoration: none;
     border-radius: 5px;
 }
 
 .read-more:hover {
-    background-color: #2575fc; /* Blue hover effect */
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 /* Recent News CoinPanic Banner */
@@ -284,12 +281,12 @@ main {
     box-shadow: 0 0 20px rgba(173, 216, 230, 0.8); /* Light blue glow */
     padding: 10px; /* Optional: Adjust padding as needed */
     border-radius: 10px; /* Optional: Add rounded corners */
-    background-color: #2a2a3f; /* Dark background */
+    background-color: #FAFAFA;
     z-index: 3;
 }
 
 .news-item a {
-    color: #ffffff; /* White text for links */
+    color: #301934; /* Purple color for news titles */
     text-decoration: none;
 }
 
@@ -308,7 +305,7 @@ main {
     font-weight: bold;
     align: center;
     letter-spacing: 2px;
-    color: #ffffff; /* White text */
+    color: #00000000;
 }
 
 .latest-news {
@@ -323,15 +320,15 @@ main {
     display: flex;
     flex-wrap: wrap; /* Allows items to wrap to the next line */
     justify-content: space-between; /* Distributes space between and around content items */
-    gap: 20px; /* Adds consistent spacing between grid items */
+    align-items: stretch; 
 }
 
 .news-article {
     display: flex;
     flex-direction: column; /* Stacks the image and text vertically */
-    flex-basis: calc(50% - 10px); /* Takes up half the parent container's width minus some margin */
+    flex-basis: calc(50% - 20px); /* Takes up half the parent container's width minus some margin */
     margin-bottom: 20px; /* Space between rows */
-    background-color: #2a2a3f; /* Dark background */
+    background-color: #ffffff; /* Adds background color to each item */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 15px;
@@ -340,28 +337,14 @@ main {
 
 .news-article img {
     width: 100%; /* Ensures the image fills the container */
-    height: 200px; /* Fixed height for uniformity */
-    border-radius: 8px; /* Rounds the corners of the image */
-    object-fit: cover; /* Ensures images maintain aspect ratio */
+    height: 350px; /* Maintains aspect ratio */
+    border-radius: 16px; /* Rounds the corners of the image */
 }
 
-.news-article h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.4rem; /* Increased font size for better visibility */
-    font-weight: bold;
-    margin: 10px 0;
-    color: #60a5fa; /* Bright blue for better contrast */
-}
-
-.news-article p {
-    font-size: 1rem;
-    color: #d1d1d1; /* Light gray for better readability */
-    margin: 10px 0;
-}
 
 footer {
-    background-color: #1a1a1a; /* Dark background */
-    color: #ffffff; /* White text */
+    background-color: #333333;
+    color: #ffffff;
     text-align: center;
     padding: 20px 0;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
@@ -376,4 +359,199 @@ footer {
     border: 1px solid #ddd;
     width: 80%;
     margin: 20px auto;
+}
+
+
+
+Mobile style:
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Slightly larger font size for better readability */
+    }
+
+    /* Header and Navigation */
+    header {
+        padding: 10px 0; /* Add some padding */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stack logo and nav links vertically */
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 60px; /* Slightly smaller logo */
+        height: 60px;
+    }
+
+    .logo-text {
+        font-size: 1.5rem; /* Smaller logo text */
+        text-align: center; /* Center-align logo text */
+        margin-top: 10px; /* Add some margin */
+    }
+
+    .nav-links {
+        flex-direction: row; 
+        gap: 5px;
+        font-size: 0.5rem; /* Slightly larger font size for nav links */
+        margin-top: 10px;
+        text-align: center; /* Center-align nav links */
+    }
+
+    .nav-links li a {
+        padding: 8px 12px; /* Add more padding for better touch targets */
+    }
+
+    /* Ticker */
+    .ticker-container {
+        padding: 17px 0; /* Reduce padding */
+    }
+
+    .ticker-item {
+        font-size: 1.5rem; /* Smaller font size for ticker */
+        margin-right: 15px; /* Reduce space between items */
+    }
+
+    /* Main Content */
+    main {
+        padding: 10px; /* Add some padding */
+    }
+
+    .top {
+        flex-direction: column; /* Stack featured article and medium articles vertically */
+        margin: 10px 0; /* Adjust margins */
+    }
+
+    .featured-article {
+        flex: 1 1 100%; /* Full width for featured article */
+        margin-bottom: 20px; /* Add space below */
+        padding: 15px; /* Add padding */
+    }
+
+    .featured-article img {
+        height: auto; /* Ensure images are responsive */
+    }
+
+    .featured-article h2 {
+        font-size: 1.5rem; /* Adjust font size for featured article title */
+        margin: 10px 0; /* Add some margin */
+    }
+
+    .medium-articles {
+        flex: 1 1 100%; /* Full width for medium articles */
+        gap: 15px; /* Add gap between medium articles */
+    }
+
+    .medium-article {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px;
+        align-items: flex-start;
+        padding: 5px; 
+    }
+
+    .medium-article img {
+        height: auto; /* Ensure images are responsive */
+    }
+
+    .medium-article-h4 {
+        font-size: 0.5rem; /* Adjust font size for medium article titles */
+        margin: 10px 0; /* Add some margin */
+    }
+
+    .latest-news {
+        margin: 10px 0; /* Adjust margins */
+    }
+
+    .news-grid {
+        flex-direction: column; /* Stack news articles vertically */
+        gap: 20px; /* Add gap between news articles */
+    }
+
+    .news-article {
+        flex-basis: 100%; /* Full width for each news article */
+        margin-bottom: 20px; /* Add space between articles */
+        padding: 15px; /* Add padding */
+    }
+
+    .news-article img {
+        height: 200px; /* Adjust image height */
+        width: 100%; /* Ensure images are responsive */
+        object-fit: cover; /* Ensure images maintain aspect ratio */
+    }
+
+    .news-article h4 {
+        font-size: 1.2rem; /* Adjust font size for news article titles */
+        margin: 10px 0; /* Add some margin */
+    }
+
+    /* Footer */
+    footer {
+        padding: 15px 0; /* Add some padding */
+        font-size: 0.9rem; /* Slightly smaller font size */
+    }
+
+    /* News Banner */
+    .news-banner {
+        padding: 10px 0; /* Reduce padding */
+    }
+
+    .news-ticker {
+        padding-left: 20%; /* Adjust ticker padding */
+    }
+
+    .news-item {
+        font-size: 0.6rem; /* Smaller font size for news items */
+        margin-right: 15px; /* Reduce space between items */
+    }
+
+    .vertical-banner {
+        display: none;
+    }
+
+     .subscribe-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 40px;
+            background: #1e1e2f;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+}
+
+
+/* Adjustments for very small screens */
+@media (max-width: 400px) {
+    .logo-text {
+        font-size: 1.2rem; /* Even smaller logo text */
+    }
+
+    .nav-links {
+        font-size: 0.9rem; /* Smaller font size for nav links */
+    }
+
+    .ticker-item {
+        font-size: 0.8rem; /* Smaller font size for ticker */
+    }
+
+    .featured-article h2 {
+        font-size: 1.4rem; /* Adjust font size for featured article title */
+    }
+
+    .medium-article h4 {
+        font-size: 1.1rem; /* Adjust font size for medium article titles */
+    }
+
+    .news-article h4 {
+        font-size: 1.1rem; /* Adjust font size for news article titles */
+    }
+
+    .news-item {
+        font-size: 0.8rem; /* Smaller font size for news items */
+    }
 }
