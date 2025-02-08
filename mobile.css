@@ -1,8 +1,25 @@
 /* Responsive Styles for Mobile Devices */
 @media (max-width: 768px) {
-    body {
-        font-size: 16px; /* Slightly larger font size for better readability */
-    }
+           /* General Styles */
+           body {
+            font-family: 'Electrolize', sans-serif;
+            background: linear-gradient(135deg, #2575fc, #6a11cb, #6a11cb, #2575fc);
+            color: white;
+            padding: 0px 0;
+            top: 0;
+            z-index: 1;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            font-family: 'Electrolize', sans-serif;
+            background: linear-gradient(135deg, #6a11cb,#6a11cb, #1a1a1a, #6a11cb, #2575fc);
+            color: white;
+            padding: 0px 0;
+            top: 0;
+            z-index: 1;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
     /* Header and Navigation */
     header {
@@ -48,9 +65,54 @@
         margin-right: 15px; /* Reduce space between items */
     }
 
-    /* Main Content */
-    main {
-        padding: 10px; /* Add some padding */
+
+    /* Lambda Section Styling */
+    .lambda {
+        display: flex;
+        margin-bottom: 3px;
+        margin-top: 3x;
+        margin-right: 3px;
+        margin-left: 3px;
+        padding: 10px;
+    }
+
+    .lambda-articles {
+        display: flex;
+        flex-direction:row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 8px;
+        gap: 10px;
+        align-items: center; 
+    }
+
+    .lambda-article {
+        display: flex;
+        background-color: #f4f4f9;
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        flex: 1 1 40%; /* Allows two articles to fit side by side, considering a little space for margin/padding */
+        box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+        width: auto;
+        height: 220px; /* Adjust height as needed, or set a fixed height for uniformity */
+    }
+
+    .lambda-article img {
+        display: flex;
+        width: 100%;
+        height: auto;
+        padding: 0px;
+        border-radius: 8px;
+    }
+
+    .lambda-article h4 {
+        display: flex;
+        align-self: flex-end;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.8rem;
+        margin: 10px 0;
     }
 
     .top {
@@ -70,7 +132,12 @@
 
     .featured-article h2 {
         font-size: 1.5rem; /* Adjust font size for featured article title */
+        color: black;
         margin: 10px 0; /* Add some margin */
+    }
+
+    .featured-article p {
+        display: none;
     }
 
     .medium-articles {
@@ -141,25 +208,10 @@
         font-size: 0.6rem; /* Smaller font size for news items */
         margin-right: 15px; /* Reduce space between items */
     }
-
-    .vertical-banner {
-        display: none;
-    }
-
-     .subscribe-container {
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 40px;
-            background: #1e1e2f;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
 }
 
-
 /* Adjustments for very small screens */
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     .logo-text {
         font-size: 1.2rem; /* Even smaller logo text */
     }

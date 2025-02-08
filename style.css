@@ -157,6 +157,103 @@ h2 {
     }
 }
 
+/* Lambda Section Styling */
+.lambda {
+    display: flex;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 80px;
+    margin-left: 80px;
+    padding: 10px;
+}
+
+.lambda-articles {
+    display: flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center; 
+}
+
+.lambda-article {
+    display: flex;
+    background-color: #f4f4f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    flex: 1 1 40%; /* Allows two articles to fit side by side, considering a little space for margin/padding */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    width: auto;
+    height: 350px; /* Adjust height as needed, or set a fixed height for uniformity */
+}
+
+.lambda-article img {
+    display: flex;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.lambda-article h4 {
+    display: flex;
+    align-self: flex-end;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    margin: 15px 0;
+}
+
+
+
+/* Price Tickers Section */
+.trending-banner {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background: #00B4D8;
+    padding: 20px 0;
+    box-shadow: 0 8px 12px #006D5B; /* Updated to green shadow */
+    border-top: 2px solid #00B4D8; /* Changed to white for consistency */
+    border-bottom: 2px solid #00B4D8;
+}
+
+.trending-ticker {
+    display: inline-block;
+    padding-left: 10%;
+    animation: ticker-scroll 50s linear infinite; /* Slowed down */
+}
+
+.trending-item {
+    display: inline-block;
+    color: white;
+    margin-right: 80px; /* Increased space between cryptos */
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.rank-up {
+    color: #4caf50; /* Green for price up */
+    margin-right: 12px;
+}
+
+.rank-down {
+    color: #f44336; /* Red for price down */
+    margin-right: 12px;
+}
+
+@keyframes ticker-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+
 /* TOP SECTION STYLING */
 main {
     padding: 5px;
@@ -359,199 +456,4 @@ footer {
     border: 1px solid #ddd;
     width: 80%;
     margin: 20px auto;
-}
-
-
-
-Mobile style:
-
-/* Responsive Styles for Mobile Devices */
-@media (max-width: 768px) {
-    body {
-        font-size: 16px; /* Slightly larger font size for better readability */
-    }
-
-    /* Header and Navigation */
-    header {
-        padding: 10px 0; /* Add some padding */
-    }
-
-    .navbar {
-        flex-direction: column; /* Stack logo and nav links vertically */
-        align-items: center;
-        padding: 10px;
-    }
-
-    .logo img {
-        width: 60px; /* Slightly smaller logo */
-        height: 60px;
-    }
-
-    .logo-text {
-        font-size: 1.5rem; /* Smaller logo text */
-        text-align: center; /* Center-align logo text */
-        margin-top: 10px; /* Add some margin */
-    }
-
-    .nav-links {
-        flex-direction: row; 
-        gap: 5px;
-        font-size: 0.5rem; /* Slightly larger font size for nav links */
-        margin-top: 10px;
-        text-align: center; /* Center-align nav links */
-    }
-
-    .nav-links li a {
-        padding: 8px 12px; /* Add more padding for better touch targets */
-    }
-
-    /* Ticker */
-    .ticker-container {
-        padding: 17px 0; /* Reduce padding */
-    }
-
-    .ticker-item {
-        font-size: 1.5rem; /* Smaller font size for ticker */
-        margin-right: 15px; /* Reduce space between items */
-    }
-
-    /* Main Content */
-    main {
-        padding: 10px; /* Add some padding */
-    }
-
-    .top {
-        flex-direction: column; /* Stack featured article and medium articles vertically */
-        margin: 10px 0; /* Adjust margins */
-    }
-
-    .featured-article {
-        flex: 1 1 100%; /* Full width for featured article */
-        margin-bottom: 20px; /* Add space below */
-        padding: 15px; /* Add padding */
-    }
-
-    .featured-article img {
-        height: auto; /* Ensure images are responsive */
-    }
-
-    .featured-article h2 {
-        font-size: 1.5rem; /* Adjust font size for featured article title */
-        margin: 10px 0; /* Add some margin */
-    }
-
-    .medium-articles {
-        flex: 1 1 100%; /* Full width for medium articles */
-        gap: 15px; /* Add gap between medium articles */
-    }
-
-    .medium-article {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 10px;
-        align-items: flex-start;
-        padding: 5px; 
-    }
-
-    .medium-article img {
-        height: auto; /* Ensure images are responsive */
-    }
-
-    .medium-article-h4 {
-        font-size: 0.5rem; /* Adjust font size for medium article titles */
-        margin: 10px 0; /* Add some margin */
-    }
-
-    .latest-news {
-        margin: 10px 0; /* Adjust margins */
-    }
-
-    .news-grid {
-        flex-direction: column; /* Stack news articles vertically */
-        gap: 20px; /* Add gap between news articles */
-    }
-
-    .news-article {
-        flex-basis: 100%; /* Full width for each news article */
-        margin-bottom: 20px; /* Add space between articles */
-        padding: 15px; /* Add padding */
-    }
-
-    .news-article img {
-        height: 200px; /* Adjust image height */
-        width: 100%; /* Ensure images are responsive */
-        object-fit: cover; /* Ensure images maintain aspect ratio */
-    }
-
-    .news-article h4 {
-        font-size: 1.2rem; /* Adjust font size for news article titles */
-        margin: 10px 0; /* Add some margin */
-    }
-
-    /* Footer */
-    footer {
-        padding: 15px 0; /* Add some padding */
-        font-size: 0.9rem; /* Slightly smaller font size */
-    }
-
-    /* News Banner */
-    .news-banner {
-        padding: 10px 0; /* Reduce padding */
-    }
-
-    .news-ticker {
-        padding-left: 20%; /* Adjust ticker padding */
-    }
-
-    .news-item {
-        font-size: 0.6rem; /* Smaller font size for news items */
-        margin-right: 15px; /* Reduce space between items */
-    }
-
-    .vertical-banner {
-        display: none;
-    }
-
-     .subscribe-container {
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 40px;
-            background: #1e1e2f;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-}
-
-
-/* Adjustments for very small screens */
-@media (max-width: 400px) {
-    .logo-text {
-        font-size: 1.2rem; /* Even smaller logo text */
-    }
-
-    .nav-links {
-        font-size: 0.9rem; /* Smaller font size for nav links */
-    }
-
-    .ticker-item {
-        font-size: 0.8rem; /* Smaller font size for ticker */
-    }
-
-    .featured-article h2 {
-        font-size: 1.4rem; /* Adjust font size for featured article title */
-    }
-
-    .medium-article h4 {
-        font-size: 1.1rem; /* Adjust font size for medium article titles */
-    }
-
-    .news-article h4 {
-        font-size: 1.1rem; /* Adjust font size for news article titles */
-    }
-
-    .news-item {
-        font-size: 0.8rem; /* Smaller font size for news items */
-    }
 }

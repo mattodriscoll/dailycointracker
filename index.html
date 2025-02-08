@@ -22,7 +22,7 @@
                 <li><a href="submit-story.html">Submit a Story</a></li>
                 <li><a href="https://x.com/DailyCoinTrack">Community</a></li>
                 <li><a href="subscribe.html">Subscribe</a></li>
-                <li><a href="new-projects.html">New Projects</a></li>
+                <li><a href="https://x.com/DailyCoinTrack">New Projects</a></li>
             </ul>
         </nav>
     </header>
@@ -34,11 +34,48 @@
     </div>
 
     <main>
+        <section class="lambda">
+            <div class="lambda-articles">
+                <article class="lambda-article">
+                    <a href="articles/scholar.html">
+                        <img src="images/scholar.png">
+                        <h4>Florida Man Wants Bitcoin in State Funds: To the Moon, Miami!</h4>
+                    </a>
+                </article>
+                <article class="lambda-article">
+                    <a href="articles/missouri.html">
+                        <img src="images/missouri.png">
+                        <h4>Missouri Bill Adds a Bit of Bitcoin to State Investments</h4>
+                    </a>
+                </article>
+                <article class="lambda-article">
+                    <a href="articles/planet.html">
+                        <img src="images/planet.png">
+                        <h4>Breaking Up for Good? Citi Thinks So, but Crypto Don't Care!</h4>
+                    </a>
+                </article>
+                <article class="lambda-article">
+                    <a href="articles/crazy.html">
+                        <img src="images/crazy.png">
+                        <h4>Bridging the Gap Between Newbies & Pros in the World of Crypto</h4>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section class="trending-coins">
+            <div class="trending-banner">
+                <div class="trending-ticker" id="trending-ticker">
+                    Loading trending coins...
+                </div>
+            </div>
+        </section>
+
         <section class="top">
             <article class="featured-article">
                 <img src="images/bitcoin.jpg" alt="Bitcoin">
-                <h2>U.S. Announces New Tariffs on Mexican Goods Amidst Ongoing Trade Disputes -- Crypto Market Impact</h2>
-                <p>Bitcoin remains resilient, maintaining a strong position above the $100k mark. This enduring performance underscores the cryptocurrency's growing acceptance and confidence among investors, signaling a bullish outlook in global markets.</p>
+                <h2> Global Market Update: Bitcoin Hovers above $100k </h2>
+                <p>Bitcoin remains resilient, maintaining a strong position above the $100k mark. </p>
                 <a href="headline.html" class="read-more">Read More</a>
             </article>
             <div class="medium-articles">
@@ -143,6 +180,35 @@
                 document.getElementById('ticker').innerHTML = 'Failed to load prices. Please try again later.';
             }
         }
+
+        // Function to fetch trending coins from CoinGecko API
+        async function fetchTrendingCoins() {
+            try {
+                const response = await fetch('https://api.coingecko.com/api/v3/search/trending');
+                const data = await response.json();
+
+                const trendingTicker = document.getElementById('trending-ticker');
+                trendingTicker.innerHTML = '';
+
+                data.coins.forEach(coin => {
+                    const coinItem = document.createElement('div');
+                    coinItem.className = 'trending-item';
+                    coinItem.innerHTML = `
+                        <span>${coin.item.name} (${coin.item.symbol.toUpperCase()})</span>
+                        <span>Rank: ${coin.item.market_cap_rank}</span>
+                    `;
+                    trendingTicker.appendChild(coinItem);
+                });
+            } catch (error) {
+                console.error('Error fetching trending coins:', error);
+                document.getElementById('trending-ticker').innerHTML = 'Failed to load trending coins. Please try again later.';
+            }
+        }
+
+        // Fetch prices, news, and trending coins on page load
+        fetchCryptoPrices();
+        fetchTrendingNews();
+        fetchTrendingCoins();
 
         // Function to fetch trending news from CryptoPanic API
         async function fetchTrendingNews() {
