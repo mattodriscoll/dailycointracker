@@ -2,8 +2,8 @@ Desktop View */
 body {
     font-family: 'Electrolize', sans-serif;
     font-weight: bold;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     background-color: #ffffff;
     color: #333333;
     overflow-x: hidden;
