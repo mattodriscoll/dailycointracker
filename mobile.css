@@ -5,7 +5,8 @@
             font-family: 'Electrolize', sans-serif;
             background: linear-gradient(135deg, #2575fc, #6a11cb, #6a11cb, #2575fc);
             color: white;
-            padding: 0px 0;
+            padding: 0px 0px;
+            margin: 0px;
             top: 0;
             z-index: 1;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
