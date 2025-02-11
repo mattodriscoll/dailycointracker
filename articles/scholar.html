@@ -329,52 +329,49 @@
             padding: 5px;
         }
 
-        processed-images {
+        .processed-images {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
-            margin-top: 10px;
-            margin-right: 80px;
-            margin-left: 80px;
+            margin: 20px 80px; /* Adjust margins as needed */
             padding: 10px;
         }
 
         .larger-image {
-            flex: 0 0 50%;
+            flex: 0 0 60%; /* Takes up 60% of the container width */
             background-color: #f4f4f9;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            max-height: 300px;
+            margin-right: 20px; /* Adds space between the larger image and smaller images */
         }
 
-        .processed-image2 {
+        .larger-image img {
             width: 100%;
             height: auto;
             border-radius: 16px;
         }
 
         .smaller-images {
-            flex: 0 0 50%; /* This container takes the remaining 50% */
+            flex: 0 0 35%; /* Takes up 35% of the container width */
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             justify-content: space-between;
-            padding: 10px;
-            align-items: flex-start; /* Ensures that the articles align at the top */
         }
 
         .smaller-image {
-            display: flex;
             background-color: #f4f4f9;
             padding: 20px;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
-            flex: 1 1 40%; /* Allows two articles to fit side by side, considering a little space for margin/padding */
-            box-sizing: border-box; /* Includes padding and border in the element's total width and height */
-            width: auto;
-            height: 150px; /* Adjust height as needed, or set a fixed height for uniformity */
+            width: 100%;
+            height: auto;
+        }
+
+        .smaller-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
         }
 
         
@@ -407,16 +404,14 @@
 
         <section class="processed-images">
             <div class="larger-image">
-                <div class="processed-image2">
-                    <img src="../images/processed-image2.png">
-                </div>
+                <img src="../images/processed-image2.png" alt="Large Image">
             </div>
             <div class="smaller-images">
                 <div class="smaller-image">
-                    <img src="../images/processed-image3.png">
+                    <img src="../images/processed-image3.png" alt="Small Image 1">
                 </div>
                 <div class="smaller-image">
-                    <img src="../images/processed-image4.png">
+                    <img src="../images/processed-image4.png" alt="Small Image 2">
                 </div>
             </div>
         </section>        
