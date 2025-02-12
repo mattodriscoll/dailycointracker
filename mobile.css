@@ -210,26 +210,6 @@
         margin-right: 15px; /* Reduce space between items */
     }
 
-
-           .processed-images {
-                       display: flex;
-                       justify-content: center; /* Center the images horizontally */
-                       align-items: center; /* Center the images vertically */
-                       margin: 20px auto; /* Center the section and provide some margin */
-                       padding: 5px;
-           }
-
-           .processed-images div {
-                      margin: 10px 10px; /* Adds space between the images */
-                      width: 100px; /* Set the width of the images */
-                      height: 100px; /* Set the height of the images */
-           }
-
-           .processed-images img {
-                       width: 100px; /* Set the width of the images */
-                       height: 100px; /* Set the height of the images */
-                       object-fit: cover; /* This will cover the area of the box without stretching the image */
-           }   
 }
 
 /* Adjustments for very small screens */
