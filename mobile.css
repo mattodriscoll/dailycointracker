@@ -116,6 +116,55 @@
         margin: 10px 0;
     }
 
+    /* New Project Section Styling */
+    .new-projects {
+        display: flex;
+        margin-bottom: 3px;
+        margin-top: 3x;
+        margin-right: 3px;
+        margin-left: 3px;
+        padding: 10px;
+    }
+
+    .new-projects-articles {
+        display: flex;
+        flex-direction:row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 8px;
+        gap: 10px;
+        align-items: center; 
+    }
+
+    .new-project-article {
+        display: flex;
+        background-color: #f4f4f9;
+        padding: 12px;
+        border-radius: 14px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        flex: 1 1 40%; /* Allows two articles to fit side by side, considering a little space for margin/padding */
+        box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+        width: auto;
+        height: 220px; /* Adjust height as needed, or set a fixed height for uniformity */
+    }
+
+    .new-project-article img {
+        display: flex;
+        width: 100%;
+        height: auto;
+        padding: 0px;
+        border-radius: 8px;
+    }
+
+    .new-project-article h4 {
+        display: flex;
+        align-self: flex-end;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.8rem;
+        margin: 10px 0;
+    }
+
     .top {
         flex-direction: column; /* Stack featured article and medium articles vertically */
         margin: 10px 0; /* Adjust margins */
