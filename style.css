@@ -447,6 +447,24 @@ footer {
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 
+        .processed-images {
+            display: flex;
+            justify-content: center; /* Center the images horizontally */
+            align-items: center; /* Center the images vertically */
+            margin: 20px auto; /* Center the section and provide some margin */
+            padding: 5px;
+        }
+
+        .processed-images div {
+            margin: 0 10px; /* Adds space between the images */
+        }
+
+        .processed-images img {
+            width: 200px; /* Set the width of the images */
+            height: 200px; /* Set the height of the images */
+            object-fit: cover; /* This will cover the area of the box without stretching the image */
+        }    
+
 /* Chatbot Output Styling */
 #chatbot-output {
     color: white; /* White text */
