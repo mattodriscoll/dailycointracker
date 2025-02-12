@@ -331,12 +331,21 @@
 
         .processed-images {
             display: flex;
-            justify-content: space-between;
-            margin: 20px 120px; /* Adjust margins as needed */
-            padding: 0px;
+            justify-content: center; /* Center the images horizontally */
+            align-items: center; /* Center the images vertically */
+            margin: 20px auto; /* Center the section and provide some margin */
+            padding: 5px;
         }
 
-        
+        .processed-images div {
+            margin: 0 10px; /* Adds space between the images */
+        }
+
+        .processed-images img {
+            width: 200px; /* Set the width of the images */
+            height: 200px; /* Set the height of the images */
+            object-fit: cover; /* This will cover the area of the box without stretching the image */
+        }        
     </style>
 </head>
 <body>
