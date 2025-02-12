@@ -221,11 +221,13 @@
 
            .processed-images div {
                       margin: 10px 10px; /* Adds space between the images */
+                      width: 100px; /* Set the width of the images */
+                      height: 100px; /* Set the height of the images */
            }
 
            .processed-images img {
-                       width: 150px; /* Set the width of the images */
-                       height: 150px; /* Set the height of the images */
+                       width: 100px; /* Set the width of the images */
+                       height: 100px; /* Set the height of the images */
                        object-fit: cover; /* This will cover the area of the box without stretching the image */
            }   
 }
