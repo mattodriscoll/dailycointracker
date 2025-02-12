@@ -345,7 +345,27 @@
             width: 300px; /* Set the width of the images */
             height: 300px; /* Set the height of the images */
             object-fit: cover; /* This will cover the area of the box without stretching the image */
-        }        
+        }
+
+        @media (max-width: 768px) {
+            .processed-images {
+                display: flex;
+                justify-content: center; /* Center the images horizontally */
+                align-items: center; /* Center the images vertically */
+                margin: 20px auto; /* Center the section and provide some margin */
+                padding: 10px;
+            }
+
+        .processed-images {
+            margin: 0 10px; /* Adds space between the images */
+            width: 110px; /* Set the width of the images */
+            height: 110px; /* Set the height of the images */
+        }
+
+        .processed-images img {
+            width: 100px; /* Set the width of the images */
+            height: 100px; /* Set the height of the images */
+        }
     </style>
 </head>
 <body>
